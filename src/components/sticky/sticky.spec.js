@@ -6,7 +6,7 @@ describe('$mdStickySpec', function() {
   var $document, $compile, $rootScope, $mdSticky;
   beforeEach(module('material.components.sticky', function($provide) {
     var $$rAF = function(fn) { fn(); };
-    $$rAF.debounce = function(fn) { return function() { fn(); }; };
+    $$rAF.throttle = function(fn) { return function() { fn(); }; };
     $provide.value('$$rAF', $$rAF);
   }));
 
